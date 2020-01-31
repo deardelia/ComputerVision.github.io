@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.62.2" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction"><meta property="og:title" content="Introduction" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://example.org/" />
+
+<title>Introduction | Boxer</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.327a7346ed65bd45e7889adff447f01f212a1b54dbf3c12139d26b63b077108f.css" integrity="sha256-MnpzRu1lvUXniJrf9EfwHyEqG1Tb88EhOdJrY7B3EI8=">
+
+
+<script defer src="/en.search.min.74b0bac6f0b68a0f85dbb24007da067d5d48324abc75a102c07f0621d329037e.js" integrity="sha256-dLC6xvC2ig&#43;F27JAB9oGfV1IMkq8daECwH8GIdMpA34="></script>
+
+<link rel="alternate" type="application/rss+xml" href="http://example.org/index.xml" title="Boxer" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="toc-control" />
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container">
+    
+  
+
+  <aside class="book-toc levels-6 fixed">
+    
+    <label id="toc-control" for="toc-control">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#main-contribution">Main Contribution</a></li>
+    <li><a href="#innovations">Innovations</a></li>
+    <li><a href="#example-of-boxer-system">Example of Boxer System</a></li>
+    <li><a href="#demo-video">Demo Video</a></li>
+  </ul>
+</nav>
+    </label>
+    
+  </aside>
+
+
+
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label id="menu-control" for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+  <label id="toc-control" for="toc-control">
+  <strong>Introduction</strong>
+  </label>
+</header>
+
+      
+<article class="markdown"><h1 id="boxer-interactive-comparison-of-classification-results">Boxer: Interactive Comparison of Classification Results</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Machine learning practitioners often perform experiments that compare classification results. Users gather the results of different classifiers and/or data perturbations on a collection of testing examples. Results data are stored and analyzed for tasks such as model selection, hyper-parameter tuning, data quality assessment, fairnes testing, and gaining insight about the underlying data. Classifier comparison experiments are typically evaluated by summary statistics of model performance, such as accuracy, F1, and related metrics. These aggregate measures provide for a quick summary, but not detailed examination. Examining performance on different subsets of data can provide insights into the models (e.g., to understand performance for future improvement), the data (e.g., to understand data quality issues to improve cleaning), or the underlying phenomena (e.g., to identify potential causal relationships). Making decisions solely on aggregated data can lead to missing important aspects of classifier performance. To perform such closer examination, practitioners rely on scripting and existing tools in their standard workflows. The lack of specific tooling makes the process laborious and comparisons challenging, limiting how often experiments are examined in detail.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="main-contribution">Main Contribution</h2>
+<p>We contribute a comprehensive approach for interactive comparison of machine learning classifier results. Our approach has been implemented in a prototype system called Boxer. We show how Boxer enables users to perform a variety of tasks in assessing machine learning systems.</p>
+<h2 id="innovations">Innovations</h2>
+<ul>
+<li>
+<p>The approach to classifier comparison that combines subset identification, metric selection, and comparative visualization to enable detailed comparison in classifier results.</p>
+</li>
+<li>
+<p>The architecture of multiple selections and set algebra that allows users to flexibly link views and specify data subsets of interest.</p>
+</li>
+<li>
+<p>Interactive techniques and visual designs that make the approach practical. These key ideas should be applicable in other systems for interactive comparison within complex data.</p>
+</li>
+</ul>
+<h2 id="example-of-boxer-system">Example of Boxer System</h2>
+<p><img src="/image/system-new.png" alt="Example image">
+This figure shows how Boxer’s flexible mechanisms can be used to predict whether a person will commit a crime within two years based on the data set contains 6,172 instances. Parallel Metrics view (A) shows the C3 classifier has better performance by all metrics. A histogram of race (F) selects Caucasian (cyan) and African-American (pink) instances. The Overall Performance view (B) shows C3's overall higher precision, but a lack of overlap with cyan. The Confusion Matrix (C) Grid view shows many false positives for African-Americans and many false negatives for Caucasians for C3. Histograms show the distribution of selected sets across the actual (D) and the C3-predicted class (E). The Performance Selection views in the third line compare accuracy (G) , precision (H) , and recall (I) for C3 on the subsets.</p>
+<h2 id="demo-video">Demo Video</h2>
+<!-- raw HTML omitted -->
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+
+</div>
+
+
+<div class="book-comments">
+  
+
+
+</div>
+
+
+      
+    </div>
+
+    <aside class="book-menu fixed">
+      <nav id="BookMenu">
+<h2 class="book-brand">
+  <a href="http://example.org/"><span>Boxer</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/data_preparation/" >
+      Data Preparation
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/demo/" >
+      Online Demo
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+  </main>
+
+  
+</body>
+
+</html>

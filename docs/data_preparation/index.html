@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Data Preparation"><meta property="og:title" content="Data Preparation" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://example.org/docs/data_preparation/" />
+
+<title>Data Preparation | Boxer</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.327a7346ed65bd45e7889adff447f01f212a1b54dbf3c12139d26b63b077108f.css" integrity="sha256-MnpzRu1lvUXniJrf9EfwHyEqG1Tb88EhOdJrY7B3EI8=">
+
+
+<script defer src="/en.search.min.74b0bac6f0b68a0f85dbb24007da067d5d48324abc75a102c07f0621d329037e.js" integrity="sha256-dLC6xvC2ig&#43;F27JAB9oGfV1IMkq8daECwH8GIdMpA34="></script>
+
+<link rel="alternate" type="application/rss+xml" href="http://example.org/docs/data_preparation/index.xml" title="Boxer" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="toc-control" />
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container">
+    
+  
+
+  <aside class="book-toc levels-6 fixed">
+    
+    <label id="toc-control" for="toc-control">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#instructions-to-prepare-your-own-data-for-boxer">Instructions to prepare your own data for Boxer</a>
+      <ul>
+        <li><a href="#data-set-composition">Data Set Composition</a></li>
+        <li><a href="#load-data-to-boxer">Load Data to Boxer</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </label>
+    
+  </aside>
+
+
+
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label id="menu-control" for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+  <label id="toc-control" for="toc-control">
+  <strong>Data Preparation</strong>
+  </label>
+</header>
+
+      
+<article class="markdown"><h2 id="instructions-to-prepare-your-own-data-for-boxer">Instructions to prepare your own data for Boxer</h2>
+<h3 id="data-set-composition">Data Set Composition</h3>
+<p>The data set used for Boxer consists of 3 files:</p>
+<ul>
+<li>
+<p><strong>results.csv</strong>: This file displays the <strong>prediction results</strong> of each classifier on each instance, where each row represents &ldquo;id&rdquo; of the data sample and each column represents the name of classifier.
+<img src="/image/result.png" alt="Example image"></p>
+</li>
+<li>
+<p><strong>features.csv</strong>:
+This file displays the <strong>features</strong> of each instance, where each row represents &ldquo;id&rdquo; of the data sample and each column represents the name of features.
+<img src="/image/feature.png" alt="Example image"></p>
+</li>
+<li>
+<p><strong>manifest.json</strong>:
+This file is the configuration of the data set, which helps Boxer system to read and load the data set.</p>
+</li>
+</ul>
+<pre><code>{
+ &quot;datasetName&quot;: &quot;IMDB 5000 dataset&quot;,  // name of the data set
+ &quot;classes&quot;: [                         // array including the names of classes
+   &quot;HIGH&quot;,
+   &quot;MED&quot;,
+   &quot;LOW&quot;
+ ],
+ &quot;classifiers&quot;: [                     // array including the names of classifiers 
+   &quot;LR&quot;,
+   &quot;KNN&quot;,
+   &quot;LDA&quot;,
+   &quot;NB&quot;,
+   &quot;SVM&quot;,
+   &quot;SVM-W&quot;,
+   &quot;RF&quot;,
+   &quot;RF-W&quot;,
+   &quot;DT&quot;
+ ],
+ &quot;features&quot;: {                       // dict including the detailed information of each feature: &quot;type&quot;, &quot;description&quot;, &quot;categories&quot;(optional), &quot;bounds&quot;(optional)
+   &quot;train_or_test&quot;: {               
+       &quot;type&quot;: &quot;categorical&quot;,
+       &quot;categories&quot;: [
+           &quot;train&quot;,
+           &quot;test&quot;
+       ],
+       &quot;description&quot;: &quot;whether instance was used for training or testing&quot;
+   },
+   &quot;movie_title&quot;: {
+     &quot;type&quot;: &quot;nominal&quot;,
+     &quot;description&quot;: &quot;title&quot;
+   },
+   &quot;title_year&quot;: {
+     &quot;type&quot;: &quot;interval&quot;,
+     &quot;description&quot;: &quot;year released&quot;
+   },
+   &quot;content_rating&quot;: {
+     &quot;type&quot;: &quot;ratio&quot;,
+     &quot;description&quot;: &quot;content rating&quot;,
+     &quot;bounds&quot;: [ 0.0, 1.0 ]
+   },
+ }
+}
+</code></pre><h3 id="load-data-to-boxer">Load Data to Boxer</h3>
+<p><img src="/image/load_data.png" alt="Example image"></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+
+</div>
+
+
+<div class="book-comments">
+  
+
+
+</div>
+
+
+      
+    </div>
+
+    <aside class="book-menu fixed">
+      <nav id="BookMenu">
+<h2 class="book-brand">
+  <a href="http://example.org/"><span>Boxer</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/data_preparation/"  class="active">
+      Data Preparation
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/demo/" >
+      Online Demo
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+  </main>
+
+  
+</body>
+
+</html>
